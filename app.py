@@ -1,13 +1,12 @@
 from flask import Flask, jsonify, render_template
-from controllers.animal_controller import AnimalController
+from controllers.main_controller import AnimalController
 
 app = Flask(__name__)
 controller = AnimalController()
 
 @app.route("/")
-def home():
-    # Renderizar la página principal
-    return render_template("index.html")
+def get_sonido_animal():
+    return "api corriendo"
 
 @app.route("/api/animal/<string:nombre>")
 def obtener_sonido_animal(nombre):
